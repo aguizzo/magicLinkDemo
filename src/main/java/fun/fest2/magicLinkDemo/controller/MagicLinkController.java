@@ -29,7 +29,7 @@ public class MagicLinkController {
         tokens.put(token, new TokenRecord(email, expiresAt));
 
         // Simulate sending email (replace with actual email service)
-        String link = "http://localhost:8080/?token=" + token;
+        String link = "http://localhost:8080/upload.html?token=" + token;
         System.out.println("Magic link for " + email + ": " + link);
         return ResponseEntity.ok(Map.of("message", "Magic link sent to your email"));
     }
@@ -46,7 +46,7 @@ public class MagicLinkController {
     }
 
     // Handle CSV upload
-    @PostMapping("/upload")
+    @PostMapping("/uploadFile")
     public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("csv") MultipartFile file) {
         if (file == null || file.isEmpty()) {
             return ResponseEntity.badRequest().body(Map.of("message", "No file uploaded"));
