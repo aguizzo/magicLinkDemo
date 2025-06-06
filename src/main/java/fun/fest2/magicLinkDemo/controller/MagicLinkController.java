@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MagicLinkController {
-    @Autowired
+
     private final MagicLinkService magicLinkService;
 
+    @Autowired
     public MagicLinkController(MagicLinkService magicLinkService) {
         this.magicLinkService = magicLinkService;
     }

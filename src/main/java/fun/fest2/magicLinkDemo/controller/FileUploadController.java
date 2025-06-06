@@ -2,6 +2,7 @@ package fun.fest2.magicLinkDemo.controller;
 
 import fun.fest2.magicLinkDemo.service.FileUploadService;
 import fun.fest2.magicLinkDemo.service.MagicLinkService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ public class FileUploadController {
     private final MagicLinkService magicLinkService;
     private final FileUploadService fileUploadService;
 
+    @Autowired
     public FileUploadController(MagicLinkService magicLinkService, FileUploadService fileUploadService) {
         this.magicLinkService = magicLinkService;
         this.fileUploadService = fileUploadService;
